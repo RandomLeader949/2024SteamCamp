@@ -19,7 +19,23 @@
             <option value="medStick">Medium pole</option>
             <option value="platformCube">Platform cube</option>
             <option value="reduction">Reduction</option>
+            <option value="pushCube">Pushed cube</option>
+            <option value="movableGoal">Mobile goal</option>
         </select>
+        <div id="mg" class="hidden-div">
+            <p>Mobile goal selected</p>
+            <p>Enter the total number of cubes in the square</p>
+            <input type="number" id="mgpc">
+            <p>Enter the total number of rings (ignoring colors) on the pole</p>
+            <input type="number" id="mgr">
+            <button onclick="mobileGoalCalc()">Submit</button>
+        </div>
+        <div id="puc" class="hidden-div">
+            <p>Push cube selected</p>
+            <p>Enter the total number of cubes in the square</p>
+            <input type="number" id="pushedCubes">
+            <button onclick="pushCubeCalc()">Submit</button>
+        </div>
         <div id="ls" class="hidden-div">
             <p>Large pole selected</p>
             <p>Enter the amount of disks in a row</p>

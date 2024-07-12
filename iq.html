@@ -15,22 +15,31 @@
         <label for="dropdown">Select an option:</label>
         <select id="dropdown">
             <option value="blank"></option>
-            <option value="smallGoal">Small pole</option>
-            <option value="largeGoal">Medium pole</option>
-            <option value="centerGoal">Large pole</option>
-            <option value="lastMinuteGoal">Pushed cube</option>
-            <option value="pointPenelty">Platform cube</option>
+            <option value="smallGoal">Small goal</option>
+            <option value="largeGoal">Large goal</option>
+            <option value="centerGoal">Center goal</option>
         </select>
         <div id="sg" class="hidden-div">
             <p>Small goal selected</p>
-            <div id="sgs">
-            <p>Enter the number of cubes in a stack</p>
-            <input type="number" id="smg">
-            <button onclick="startNumSmallGoal()">Next</button>
-            </div>
+            <p>Enter the number of cubes in one stack</p>
+            <input type="number" id="sgn">
+            <button onclick="startNumSmallGoal()">continue</button>
         </div>
-        <button id="switchTeam" onclick="switchTeams()">Switch team</button>
-        <button id="complete" onclick="complete()">Complete</button>
+        <div id="lg" class="hidden-div">
+            <p>Large goal selected</p>
+            <p>Enter the number of cubes in one stack</p>
+            <input type="number" id="lgn">
+            <button onclick="startNumLargeGoal()">continue</button>
+        </div>
+        <div id="cg" class="hidden-div">
+            <p>Center goal selected</p>
+            <p>Enter the number of cubes in the goal</p>
+            <input type="number" id="cgn">
+            <button onclick="centerGoal()">continue</button>
+        </div>
+    </div>
+    <button id="switchTeam" onclick="switchTeams()">Switch team</button>
+    <button id="complete" onclick="complete()">Complete</button>
     </div>
     <div id="b2">
         <h1 id="completedRed"></h1>

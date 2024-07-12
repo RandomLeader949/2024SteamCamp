@@ -74,6 +74,14 @@ dropdown.addEventListener('change', () => {
         red.style.display = 'none';
         puc.style.display = 'none';
         mg.style.display = 'block';
+    } else if (dropdown.value === "blank") {
+        ls.style.display = 'none';
+        ms.style.display = 'none';
+        ss.style.display = 'none';
+        pc.style.display = 'none';
+        red.style.display = 'none';
+        puc.style.display = 'none';
+        mg.style.display = 'none';
     }
 });
 function updateScores() {

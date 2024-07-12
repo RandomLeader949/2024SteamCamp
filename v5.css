@@ -5,22 +5,47 @@
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+    margin: .5vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #4a4a4a;
+}
+
+input {
+    width: 90%;
+}
+
+button {
+    width: 90%;
+    border: none;
+    background: #f1ecee;
+    border-radius: 10px;
+}
+
+body {
     display: grid;
     justify-content: center;
     align-content: center;
     align-items: center;
-    margin: .5vh;
-    width:fit-content;
+    width: 100%;
+    background-color: #e3e6ed;
 }
-input{
-    width:90%;
-    align-self:center;
+
+#dropdown {
+    width: 90%;
+    border: none;
+    border-radius: 10px;
+    background-color: #f1ecee;
 }
-button{
-    width:90%;
-    align-self:center;
-    border: 1px;
- background: #d4f5ff;
- box-shadow: #eafaff;
- border-radius: 10px;
+
+#score {
+    font-weight: 700;
+    font-size: x-large;
+}
+
+title {
+    font-weight: 700;
+    font-size: xx-large;
 }

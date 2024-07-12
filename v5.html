@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Competition Scoring</title>
+    <link rel="stylesheet" href="v5.css">
+</head>
+
+<body>
+    <h1 id="score"></h1>
+    <div id="b1">
+        <h1 id="currAdd"></h1>
+        <label for="dropdown">Select an option:</label>
+        <select id="dropdown">
+            <option value="blank"></option>
+            <option value="smallStick">Small pole</option>
+            <option value="medStick">Medium pole</option>
+            <option value="largeStick">Large pole</option>
+            <option value="pushCube">Pushed cube</option>
+            <option value="platformCube">Platform cube</option>
+            <option value="movableGoal">Mobile goal</option>
+            <option value="reduction">Reduction</option>
+        </select>
+        <div id="mg" class="hidden-div">
+            <p>Mobile goal selected</p>
+            <p>Enter the total number of cubes in the square</p>
+            <input type="number" id="mgpc">
+            <p>Enter the total number of rings (ignoring colors) on the pole</p>
+            <input type="number" id="mgr">
+            <button onclick="mobileGoalCalc()">Submit</button>
+        </div>
+        <div id="puc" class="hidden-div">
+            <p>Push cube selected</p>
+            <p>Enter the total number of cubes in the square</p>
+            <input type="number" id="pushedCubes">
+            <button onclick="pushCubeCalc()">Submit</button>
+        </div>
+        <div id="ls" class="hidden-div">
+            <p>Large pole selected</p>
+            <p>Enter the amount of disks in a row</p>
+            <input type="number" id="bigStick">
+            <button onclick="largePoleCalc()">Submit</button>
+        </div>
+        <div id="ss" class="hidden-div">
+            <p>Small pole selected</p>
+            <p>Enter the amount of disks in a row</p>
+            <input type="number" id="smallStick">
+            <button onclick="smallPoleCalc()">Submit</button>
+        </div>
+        <div id="ms" class="hidden-div">
+            <p>Medium pole selected</p>
+            <p>Enter the amount of disks in a row</p>
+            <input type="number" id="medStick">
+            <button onclick="mediumPoleCalc()">Submit</button>
+        </div>
+        <div id="pc" class="hidden-div">
+            <p>Platform cube selected</p>
+            <p>Enter the total cubes on the platform</p>
+            <input type="number" id="platCube">
+            <button onclick="platformCalc()">Submit</button>
+        </div>
+        <div id="red" class="hidden-div">
+            <p>Reduction selected</p>
+            <p>Enter the total amount of items outside the field</p>
+            <input type="number" id="redPoint">
+            <button onclick="reduce()">Submit</button>
+        </div>
+        <button id="switchTeam" onclick="switchTeams()">Switch team</button>
+        <button id="complete" onclick="complete()">Complete</button>
+    </div>
+    <div id="b2">
+        <h1 id="completedRed"></h1>
+        <h1 id="completedBlue"></h1>
+    </div>
+    <script src="v5.js"></script>
+</body>
+
+</html>

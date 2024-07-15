@@ -1,3 +1,12 @@
+/*
+Small pole ring: +1 (+1 from last ring (+1, +2, +3))
+Medium pole ring: +3 (+2 from last ring (+3, +5, +7))
+Large pole ring: +5 (+3 from last ring (+5, +8, +11))
+Platform cube: +5 per cube
+Floor cube: +2 per block
+Ring or block outside: -2
+Movable goal: 3 points per ring + 1/2 number of cubes in goal
+*/
 const dropdown = document.getElementById('dropdown');
 const redStack = document.getElementById('redStack');
 let scoreDisplay = document.getElementById('score');
@@ -156,10 +165,10 @@ function platformCalc() {
     let num = document.getElementById('platCube');
     let number = num.value;
     if (color == "red") {
-        redScore += redScore + (number * 5);
+        redScore += number * 5;
         redResult = redResult + "Platform cubes (amount: " + number + ")(points: " + number * 5 + "), ";
     } else {
-        blueScore += blueScore + (number * 5);
+        blueScore += number * 5;
         blueResult = blueResult + "Platform cubes (amount: " + number + ")(points: " + number * 5 + "), ";
     }
     updateScores()

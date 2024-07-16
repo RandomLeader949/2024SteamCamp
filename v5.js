@@ -189,7 +189,7 @@ function reduce() {
 }
 //-------------------------------------------------------
 function pushCubeCalc() {
-    let num = document.getElementById('redPoint');
+    let num = document.getElementById('pushedCubes');
     let number = num.value;
     if (color == "red") {
         redScore += number * 2;
@@ -209,9 +209,11 @@ function mobileGoalCalc() {
     let number2 = num2.value;
     if (color == "red") {
         redScore += (number1 / 2) + (number2 * 2);
+        redScore += 10;
         redResult = redResult + "Final goal (amount: rings:" + number2 + " cubes:" + number1 + ")(points: " + ((number1 / 2) + (number2 * 2)) + "), ";
     } else {
         blueScore += (number1 / 2) + (number2 * 2);
+        blueScore += 10;
         blueResult = blueResult + "Final goal (amount: rings:" + number2 + " cubes:" + number1 + ")(points: " + ((number1 / 2) + (number2 * 2)) + "), ";
     }
     updateScores()

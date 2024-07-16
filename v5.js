@@ -199,7 +199,7 @@ function pushCubeCalc() {
         blueResult = blueResult + "Floor cubes (amount: " + number + ")(points: " + number * 2 + "), ";
     }
     updateScores()
-    redPoint.value = '';
+    pushedCubes.value = '';
 }
 //-------------------------------------------------------
 function mobileGoalCalc() {

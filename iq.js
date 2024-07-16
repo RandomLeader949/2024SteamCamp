@@ -13,28 +13,34 @@ updateTeam()
 sg.style.display = 'none';
 lg.style.display = 'none';
 cg.style.display = 'none';
+red.style.display = 'none';
 //changes the screen for the selected score
 dropdown.addEventListener('change', () => {
     if (dropdown.value === "blank") {
         sg.style.display = 'none';
         lg.style.display = 'none';
         cg.style.display = 'none';
-
+        red.style.display = 'none';
     } else if (dropdown.value === 'smallGoal') {
         sg.style.display = 'block';
         lg.style.display = 'none';
         cg.style.display = 'none';
-
+        red.style.display = 'none';
     } else if (dropdown.value === 'largeGoal') {
         sg.style.display = 'none';
         lg.style.display = 'block';
         cg.style.display = 'none';
-
+        red.style.display = 'none';
     } else if (dropdown.value === 'centerGoal') {
         sg.style.display = 'none';
         lg.style.display = 'none';
         cg.style.display = 'block';
-    }
+        red.style.display = 'none';
+    } else if (dropdown.value === 'reduction') // not sure what it's called
+        sg.style.display = 'none';
+        lg.style.display = 'none';
+        cg.style.display = 'none';
+        red.style.display = 'block';
 });
 //Changes the scoreboard
 function updateScores() {
@@ -103,6 +109,18 @@ function centerGoal() {
             blueScore += 6;
         }
     }
+    updateScores();
+}
+//---------------------------------========================
+function reductionAmountCalc() {
+    let num = document.getElementById('reductionAmount');
+    let number = num.value;
+    if (color == "red"){
+    redScore -= number * 2;
+    }
+        if (color == "blue") {
+            blueScore += 6;
+        }
     updateScores();
 }
 //switches the team to the team not currently used

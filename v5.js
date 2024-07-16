@@ -165,10 +165,14 @@ function platformCalc() {
     let num = document.getElementById('platCube');
     let number = num.value;
     if (color == "red") {
-        redScore += number * 5;
+        for(let i = 0; i < number; i++){
+            redScore += 5 + (2*i);
+        }
         redResult = redResult + "Platform cubes (amount: " + number + ")(points: " + number * 5 + "), ";
     } else {
-        blueScore += number * 5;
+        for(let i = 0; i < number; i++){
+            blueScore += 5 + (2*i);
+        }
         blueResult = blueResult + "Platform cubes (amount: " + number + ")(points: " + number * 5 + "), ";
     }
     updateScores()

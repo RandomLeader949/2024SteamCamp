@@ -26,6 +26,7 @@ pc.style.display = 'none';
 red.style.display = 'none';
 puc.style.display = 'none';
 mg.style.display = 'none';
+t.style.display = 'none';
 dropdown.addEventListener('change', () => {
     if (dropdown.value === 'largeStick') {
         ls.style.display = 'block';
@@ -35,6 +36,7 @@ dropdown.addEventListener('change', () => {
         red.style.display = 'none';
         puc.style.display = 'none';
         mg.style.display = 'none';
+        t.style.display = 'none';
     } else if (dropdown.value === 'smallStick') {
         ls.style.display = 'none';
         ms.style.display = 'none';
@@ -43,6 +45,7 @@ dropdown.addEventListener('change', () => {
         red.style.display = 'none';
         puc.style.display = 'none';
         mg.style.display = 'none';
+        t.style.display = 'none';
     } else if (dropdown.value === 'medStick') {
         ls.style.display = 'none';
         ms.style.display = 'block';
@@ -51,6 +54,7 @@ dropdown.addEventListener('change', () => {
         red.style.display = 'none';
         puc.style.display = 'none';
         mg.style.display = 'none';
+        t.style.display = 'none';
     } else if (dropdown.value === 'platformCube') {
         ls.style.display = 'none';
         ms.style.display = 'none';
@@ -59,6 +63,7 @@ dropdown.addEventListener('change', () => {
         red.style.display = 'none';
         puc.style.display = 'none';
         mg.style.display = 'none';
+        t.style.display = 'none';
     } else if (dropdown.value === 'reduction') {
         ls.style.display = 'none';
         ms.style.display = 'none';
@@ -67,6 +72,7 @@ dropdown.addEventListener('change', () => {
         red.style.display = 'block';
         puc.style.display = 'none';
         mg.style.display = 'none';
+        t.style.display = 'none';
     } else if (dropdown.value === 'pushCube') {
         ls.style.display = 'none';
         ms.style.display = 'none';
@@ -75,6 +81,7 @@ dropdown.addEventListener('change', () => {
         red.style.display = 'none';
         puc.style.display = 'block';
         mg.style.display = 'none';
+        t.style.display = 'none';
     } else if (dropdown.value === 'movableGoal') {
         ls.style.display = 'none';
         ms.style.display = 'none';
@@ -83,6 +90,7 @@ dropdown.addEventListener('change', () => {
         red.style.display = 'none';
         puc.style.display = 'none';
         mg.style.display = 'block';
+        t.style.display = 'none';
     } else if (dropdown.value === "blank") {
         ls.style.display = 'none';
         ms.style.display = 'none';
@@ -91,13 +99,35 @@ dropdown.addEventListener('change', () => {
         red.style.display = 'none';
         puc.style.display = 'none';
         mg.style.display = 'none';
+        t.style.display = 'none';
+    } else if (dropdown.value === "tiles") {
+        ls.style.display = 'none';
+        ms.style.display = 'none';
+        ss.style.display = 'none';
+        pc.style.display = 'none';
+        red.style.display = 'none';
+        puc.style.display = 'none';
+        mg.style.display = 'none';
+        t.style.display = 'block';
     }
+
 });
 function updateScores() {
     scoreDisplay.textContent = redScore + "-" + blueScore;
 }
 function updateTeam() {
     currAdd.textContent = "The current adder is to the " + color + " team";
+}
+function tilesCalc(){
+    let num = document.getElementById('ta');
+    let number = num.value;
+    if (color == "red"){
+        redScore += number * 4;
+    } else if (color == "blue"){
+        blueScore += number * 4;
+    }
+    updateScores();
+    ta.value = '';
 }
 function smallPoleCalc() {
     let num = document.getElementById('smallStick');

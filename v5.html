@@ -22,7 +22,13 @@
             <option value="platformCube">Platform cube</option>
             <option value="movableGoal">Mobile goal</option>
             <option value="reduction">Reduction</option>
+            <option value="tiles">Tiles</option>
         </select>
+        <div id="t" class="hidden-div">
+            <p>Enter the total number of tiles being touched</p>
+            <input type="number" id="ta">
+            <button onclick="tilesCalc()">Submit</button>
+        </div>
         <div id="mg" class="hidden-div">
             <p>Mobile goal selected</p>
             <p>Enter the total number of cubes in the square</p>

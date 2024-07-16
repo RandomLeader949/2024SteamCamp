@@ -14,6 +14,7 @@ sg.style.display = 'none';
 lg.style.display = 'none';
 cg.style.display = 'none';
 red.style.display = 'none';
+lastMin.style.display= 'none';
 //changes the screen for the selected score
 dropdown.addEventListener('change', () => {
     if (dropdown.value === "blank") {
@@ -21,26 +22,38 @@ dropdown.addEventListener('change', () => {
         lg.style.display = 'none';
         cg.style.display = 'none';
         red.style.display = 'none';
+        lastMin.style.display= 'none';
     } else if (dropdown.value === 'smallGoal') {
         sg.style.display = 'block';
         lg.style.display = 'none';
         cg.style.display = 'none';
         red.style.display = 'none';
+        lastMin.style.display= 'none';
     } else if (dropdown.value === 'largeGoal') {
         sg.style.display = 'none';
         lg.style.display = 'block';
         cg.style.display = 'none';
         red.style.display = 'none';
+        lastMin.style.display= 'none';
     } else if (dropdown.value === 'centerGoal') {
         sg.style.display = 'none';
         lg.style.display = 'none';
         cg.style.display = 'block';
         red.style.display = 'none';
-    } else if (dropdown.value === 'reduction') // not sure what it's called
+        lastMin.style.display= 'none';
+    } else if (dropdown.value === 'reduction') { // not sure what it's called
         sg.style.display = 'none';
         lg.style.display = 'none';
         cg.style.display = 'none';
         red.style.display = 'block';
+        lastMin.style.display= 'none';
+    } else if (dropdown.value === 'lastMinGoal') { // not sure what it's called
+    sg.style.display = 'none';
+    lg.style.display = 'none';
+    cg.style.display = 'none';
+    red.style.display = 'none';
+    lastMin.style.display= 'block';
+}
 });
 //Changes the scoreboard
 function updateScores() {
@@ -52,50 +65,46 @@ function updateTeam() {
 }
 function startNumSmallGoal() {
     let num = document.getElementById('sgn');
-    let number = num.value;
-    for (let i = 0; i < number; i++) {
+    let number1 = num.value;
+    let num2 = document.getElementById('sgl');
+    let number2 = num2.value;
         if (color == "red") {
-            if (i == 0) {
-                redScore += 2;
-            }
-            else {
-                redScore += 4;
-            }
+            redScore += number1 * (2 * number2)
         }
         if (color == "blue") {
-            if (i == 0) {
-                blueScore += 2;
-            }
-            else {
-                blueScore += 4;
-            }
+            blueScore += number1 * (2 * number2)
         }
+    updateScores();
+    sgn.value = '';
+    sgl.value = '';
+}
+function lastMinCalc(){
+    let num = document.getElementById('reductionAmount');
+    let number = num.value;
+    if(color == "red"){
+        redScore += number*5;
+    }
+    else if (color == "blue"){
+        blueScore += number*5;
     }
     updateScores();
+    reductionAmount.value = '';
 }
 //---------------------------------------------------------=
 function startNumLargeGoal() {
     let num = document.getElementById('lgn');
-    let number = num.value;
-    for (let i = 0; i < number; i++) {
+    let number1 = num.value;
+    let num2 = document.getElementById('lgl');
+    let number2 = num2.value;
         if (color == "red") {
-            if (i == 0) {
-                redScore += 4;
-            }
-            else {
-                redScore += 6;
-            }
+            redScore += number1 * (4 * number2)
         }
         if (color == "blue") {
-            if (i == 0) {
-                blueScore += 4;
-            }
-            else {
-                blueScore += 6;
-            }
+            blueScore += number1 * (4 * number2)
         }
-    }
     updateScores();
+    lgn.value = '';
+    lgl.value = '';
 }
 //---------------------------------------================
 function centerGoal() {
